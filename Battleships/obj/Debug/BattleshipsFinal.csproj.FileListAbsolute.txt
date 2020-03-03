@@ -1,0 +1,13 @@
+C:\Users\Liam\source\repos\BattleshipsFinal\BattleshipsFinal\bin\Debug\BattleshipsFinal.exe.config
+C:\Users\Liam\source\repos\BattleshipsFinal\BattleshipsFinal\bin\Debug\BattleshipsFinal.exe
+C:\Users\Liam\source\repos\BattleshipsFinal\BattleshipsFinal\bin\Debug\BattleshipsFinal.pdb
+C:\Users\Liam\source\repos\BattleshipsFinal\BattleshipsFinal\obj\Debug\BattleshipsFinal.csprojAssemblyReference.cache
+C:\Users\Liam\source\repos\BattleshipsFinal\BattleshipsFinal\obj\Debug\BattleshipsFinal.csproj.CoreCompileInputs.cache
+C:\Users\Liam\source\repos\BattleshipsFinal\BattleshipsFinal\obj\Debug\BattleshipsFinal.exe
+C:\Users\Liam\source\repos\BattleshipsFinal\BattleshipsFinal\obj\Debug\BattleshipsFinal.pdb
+\\hr-storage2\Cohort19homeFolder$\lb131119\Desktop\BattleshipsFinal\BattleshipsFinal\BattleshipsFinal\bin\Debug\BattleshipsFinal.exe.config
+\\hr-storage2\Cohort19homeFolder$\lb131119\Desktop\BattleshipsFinal\BattleshipsFinal\BattleshipsFinal\bin\Debug\BattleshipsFinal.exe
+\\hr-storage2\Cohort19homeFolder$\lb131119\Desktop\BattleshipsFinal\BattleshipsFinal\BattleshipsFinal\bin\Debug\BattleshipsFinal.pdb
+\\hr-storage2\Cohort19homeFolder$\lb131119\Desktop\BattleshipsFinal\BattleshipsFinal\BattleshipsFinal\obj\Debug\BattleshipsFinal.csprojAssemblyReference.cache
+\\hr-storage2\Cohort19homeFolder$\lb131119\Desktop\BattleshipsFinal\BattleshipsFinal\BattleshipsFinal\obj\Debug\BattleshipsFinal.exe
+\\hr-storage2\Cohort19homeFolder$\lb131119\Desktop\BattleshipsFinal\BattleshipsFinal\BattleshipsFinal\obj\Debug\BattleshipsFinal.pdb
