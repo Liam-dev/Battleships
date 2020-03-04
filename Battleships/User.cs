@@ -18,7 +18,7 @@ namespace BattleshipsFinal
 
         public override void Turn()
         {
-            base.Turn();
+            
         }
     }
 

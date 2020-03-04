@@ -10,11 +10,12 @@ namespace BattleshipsFinal
     {
         public Opponent()
         {
-            
+            Init();
         }
+
         public override void Turn()
         {
-            base.Turn();
+            
         }
     }
 }
