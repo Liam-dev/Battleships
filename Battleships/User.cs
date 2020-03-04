@@ -22,15 +22,17 @@ namespace Battleships
             Console.Clear();
             Console.WriteLine("Turn: {0}", name);
             PrintBoards();
-            Console.CursorTop = 30;
-            Console.CursorLeft = 1;
+            Console.CursorTop = 25;
+            Console.CursorLeft = 0;
             Console.WriteLine("Where would you like to shoot?");
             Console.Write("X Coordinate: ");
             int x = Int32.Parse(Console.ReadLine());
-            Console.Write("\nX Coordinate: ");
+            Console.Write("Y Coordinate: ");
             int y = Int32.Parse(Console.ReadLine());
 
             FireShot(new Position(x, y));
+
+            PrintBoards();
 
         }
 

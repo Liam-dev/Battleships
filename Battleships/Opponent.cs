@@ -37,8 +37,7 @@ namespace Battleships
             Position position = Position.Nowhere;
             Position randomPosition;
             do
-            {
-                
+            {               
                 randomPosition = new Position(rnd.Next(0, 10), rnd.Next(0, 10));
                 if (!(shots.Any(p => p.position.Equals(randomPosition))))
                 {
@@ -62,7 +61,8 @@ namespace Battleships
                     for (int i = 0; i < 4; i++)
                     {
                         position = shot.position.Translate((i * Math.PI) / 2, 1);
-                        if (!(shots.Any(p => p.position.Equals(position))))
+                        bool outOfBounds = (position.X < 0 || position.Y < 0 || position.X > 10 - 1 || position.Y > 10 - 1);
+                        if (!(shots.Any(p => p.position.Equals(position)) || outOfBounds))
                         {
                             return position;
                         }

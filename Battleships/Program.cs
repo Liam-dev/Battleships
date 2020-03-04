@@ -18,19 +18,16 @@ namespace Battleships
 
             liam.SetOpponent(oppo);
             oppo.SetOpponent(liam);
-           
+
             liam.PlaceShips(rnd, true);
-            
-            for (int i = 0; i < 10; i += 1)
+            oppo.PlaceShips(rnd, true);
+           
+            for (int i = 0; i < 100; i++)
             {
-                for (int j = 0; j < 10; j += 1)
-                {
-                    oppo.FireShot(new Position(i, j));
-                    liam.FireShot(new Position(i, j));
-                }
+                oppo.Turn();
+                liam.Turn();
             }
-            
-            
+
             //liam.FireShot(new Position(1, 1));
             //liam.FireShot(new Position(8, 1));
             
