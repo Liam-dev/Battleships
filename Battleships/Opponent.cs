@@ -22,7 +22,7 @@ namespace Battleships
             Position adjacentShot = AdjacentShot();
             Position randomShot = RandomShot();
 
-            if (!(adjacentShot.Equals(Position.Nowhere)))
+            if (!(adjacentShot.Equals(Position.Nowhere)) && rnd.Next(0, 3) == 0)
             {
                 FireShot(adjacentShot);
             }

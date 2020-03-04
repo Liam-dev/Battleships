@@ -24,7 +24,7 @@ namespace Battleships
             PrintBoards();
             Console.CursorTop = 25;
             Console.CursorLeft = 0;
-            Console.WriteLine("Where would you like to shoot?");
+            Console.WriteLine("Where would you like to target?");
             Console.Write("X Coordinate: ");
             int x = Int32.Parse(Console.ReadLine());
             Console.Write("Y Coordinate: ");
