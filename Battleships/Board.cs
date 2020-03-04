@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleshipsFinal
+namespace Battleships
 {
     enum SquareType
     {
@@ -25,10 +25,8 @@ namespace BattleshipsFinal
     }
 
     abstract class Board
-    {
-        protected SquareType[,] grid = new SquareType[10, 10];
-
-        protected Dictionary<SquareType, ConsoleColor> SquareColours = new Dictionary<SquareType, ConsoleColor>()
+    {    
+        static protected Dictionary<SquareType, ConsoleColor> SquareColours = new Dictionary<SquareType, ConsoleColor>()
         {
             {SquareType.Ocean, ConsoleColor.DarkGray },
             {SquareType.Hit, ConsoleColor.Green },
@@ -46,7 +44,7 @@ namespace BattleshipsFinal
             {SquareType.HitAircraftCarrier, ConsoleColor.DarkCyan }
         };
 
-        protected SquareType[] damagedShipsTypes = new SquareType[]
+        static protected SquareType[] damagedShipsTypes = new SquareType[]
         {
             SquareType.HitDestroyer,
             SquareType.HitSubmarine,
@@ -54,6 +52,8 @@ namespace BattleshipsFinal
             SquareType.HitBattleship,
             SquareType.HitAircraftCarrier
         };
+
+        protected SquareType[,] grid = new SquareType[10, 10];
 
         public abstract void Update();
 

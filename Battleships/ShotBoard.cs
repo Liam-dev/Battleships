@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleshipsFinal
+namespace Battleships
 {
     class ShotBoard : Board
     {
-        protected List<(Position, bool)> shots;
+        protected List<(Position position, bool hit)> shots;
 
-        public ShotBoard(ref List<(Position, bool)> shots)
+        public ShotBoard(ref List<(Position position, bool hit)> shots)
         {
             FillBoard(SquareType.Ocean);
             this.shots = shots;
@@ -18,10 +18,10 @@ namespace BattleshipsFinal
 
         public override void Update()
         {
-            foreach ((Position, bool) shot in shots)
+            foreach ((Position position, bool hit) shot in shots)
             {
-                Position position = shot.Item1;
-                bool hit = shot.Item2;
+                Position position = shot.position;
+                bool hit = shot.hit;
                 SquareType square;
 
                 if (hit)
