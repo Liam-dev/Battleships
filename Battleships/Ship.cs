@@ -4,33 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleshipsFinal
+namespace Battleships
 {
     abstract class Ship
     {      
-        public SquareType Type;
-        public int Length;
-        private List<Position> spacesOccupied = new List<Position>();
-        private List<Position> damagedSpaces = new List<Position>();
-        public bool Destroyed
-        {
-            get { return (SpacesOccupied.Count == 0); }
-        }
-
-        public List<Position> SpacesOccupied
-        {
-            get { return spacesOccupied; }
-        }
-
-        public List<Position> DamagedSpaces
-        {
-            get { return damagedSpaces; }
-        }
+        public SquareType Type { get; protected set; }
+        public int Length { get; protected set; }
+        public List<Position> SpacesOccupied { get; protected set; } = new List<Position>();
+        public List<Position> DamagedSpaces { get; protected set; } = new List<Position>();
+        public bool Destroyed { get { return (SpacesOccupied.Count == 0); } }
 
         public void DestroyShipSpace(Position space)
         {
-            damagedSpaces.Add(space);
-            spacesOccupied.Remove(space);
+            DamagedSpaces.Add(space);
+            SpacesOccupied.Remove(space);
         }
     }
 

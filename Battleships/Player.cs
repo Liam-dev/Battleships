@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleshipsFinal
+namespace Battleships
 {
     abstract class Player
     {
         protected Ship[] ships;
         protected Player opponent;
-        protected List<(Position, bool)> shots = new List<(Position, bool)>();
+        protected List<(Position position, bool hit)> shots = new List<(Position, bool)>();
         protected List<Position> receivedHits = new List<Position>();
 
         public bool HasLost
@@ -68,17 +68,7 @@ namespace BattleshipsFinal
             return shipHit;
         }
         
-        public void PrintBoards()
-        {
-            Console.Clear();
-            for (int i = 0; i < boards.Length; i++)
-            {
-                Board board = boards[i];
-                board.Update();
-                board.Print(new Position(60 * i + 2, 2));            }
-        }
-        
-        public void PlaceShips(Random rnd)
+        public void PlaceShips(Random rnd, bool canTouch)
         {
             List<Position> gridSpacesOccupied = new List<Position>();
 
@@ -97,6 +87,18 @@ namespace BattleshipsFinal
                     {
                         bool outOfBounds = (position.X < 0 || position.Y < 0 || position.X > 10 - 1 || position.Y > 10 - 1);
 
+                        if (!canTouch)
+                        {
+                            for (int k = 0; k < 4; k++)
+                            {
+                                Position space = position.Translate((k * Math.PI) / 2, 1);
+                                if (gridSpacesOccupied.Contains(space))
+                                {
+                                    outOfBounds = true;
+                                }
+                            }
+                        }
+
                         if (gridSpacesOccupied.Contains(position) || outOfBounds)
                         {
                             isRoom = false;
@@ -105,7 +107,7 @@ namespace BattleshipsFinal
                         else
                         {
                             spacesOccupied.Add(position);
-                            position.ChangeInDirection(direction, 1);
+                            position = position.Translate(direction, 1);
                         }
                     }
 

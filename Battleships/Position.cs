@@ -4,27 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleshipsFinal
+namespace Battleships
 {
     struct Position
     {
-        int x;
-        int y;
-
         public Position(int x, int y)
         {
-            this.x = x;
-            this.y = y;
+            X = x;
+            Y = y;
         }
 
-        public int X
-        {
-            get { return x; }
-        }
+        public int X { get; private set; }
 
-        public int Y
+        public int Y { get; private set; }
+
+        static public Position Nowhere
         {
-            get { return y; }
+            get { return (new Position(-1, -1)); }
         }
 
         public override string ToString()
@@ -37,10 +33,12 @@ namespace BattleshipsFinal
             return base.Equals(obj);
         }
 
-        public void ChangeInDirection(double direction, int spaces)
+        public Position Translate(double direction, int spaces)
         {
-            x += (int)Math.Cos(direction) * spaces;
-            y += (int)Math.Sin(direction) * spaces;
+            int x = X + (int)Math.Cos(direction) * spaces;
+            int y = Y + (int)Math.Sin(direction) * spaces;
+
+            return new Position(x, y);
         }
     }
 }

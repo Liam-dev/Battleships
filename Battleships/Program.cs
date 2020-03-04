@@ -4,27 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleshipsFinal
+namespace Battleships
 {
     class Program
     {
         static void Main(string[] args)
         {
             Console.Title = "Battleships";
+            Random rnd = new Random();
 
-            Player liam = new User("Liam");
-            Player oppo = new Opponent();
+            User liam = new User("Liam");
+            Opponent oppo = new Opponent(rnd);
 
             liam.SetOpponent(oppo);
             oppo.SetOpponent(liam);
-
-            Random rnd = new Random();
-            liam.PlaceShips(rnd);
-            oppo.PlaceShips(rnd);
+           
+            liam.PlaceShips(rnd, true);
             
-            for (int i = 0; i < 10; i += 3)
+            for (int i = 0; i < 10; i += 1)
             {
-                for (int j = 0; j < 10; j += 3)
+                for (int j = 0; j < 10; j += 1)
                 {
                     oppo.FireShot(new Position(i, j));
                     liam.FireShot(new Position(i, j));

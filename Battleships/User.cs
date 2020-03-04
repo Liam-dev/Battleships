@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleshipsFinal
+namespace Battleships
 {
     class User : Player
     {
@@ -16,9 +16,33 @@ namespace BattleshipsFinal
             Init();
         }
 
+
         public override void Turn()
         {
-            
+            Console.Clear();
+            Console.WriteLine("Turn: {0}", name);
+            PrintBoards();
+            Console.CursorTop = 30;
+            Console.CursorLeft = 1;
+            Console.WriteLine("Where would you like to shoot?");
+            Console.Write("X Coordinate: ");
+            int x = Int32.Parse(Console.ReadLine());
+            Console.Write("\nX Coordinate: ");
+            int y = Int32.Parse(Console.ReadLine());
+
+            FireShot(new Position(x, y));
+
+        }
+
+        public void PrintBoards()
+        {
+            Console.Clear();
+            for (int i = 0; i < boards.Length; i++)
+            {
+                Board board = boards[i];
+                board.Update();
+                board.Print(new Position(60 * i + 2, 2));
+            }
         }
     }
 
