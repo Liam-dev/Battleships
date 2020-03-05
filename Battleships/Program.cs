@@ -11,6 +11,7 @@ namespace Battleships
         static void Main(string[] args)
         {
             Console.Title = "Battleships";
+
             Random rnd = new Random();
 
             User liam = new User("Liam");
