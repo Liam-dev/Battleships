@@ -25,10 +25,35 @@ namespace Battleships
             Console.CursorTop = 25;
             Console.CursorLeft = 0;
             Console.WriteLine("Where would you like to target?");
-            Console.Write("X Coordinate: ");
-            int x = Int32.Parse(Console.ReadLine());
-            Console.Write("Y Coordinate: ");
-            int y = Int32.Parse(Console.ReadLine());
+            int x = -1;
+            do
+            {
+                Console.Write("X Coordinate: ");
+                try
+                {
+                    x = Int32.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Enter a number between 0 and 10");
+                }                
+
+            } while (!(x >= 0 && x <= 10));
+
+            int y = -1;
+            do
+            {
+                Console.Write("Y Coordinate: ");
+                try
+                {
+                    y = Int32.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Enter a number between 0 and 10");
+                }
+
+            } while (!(x >= 0 && x <= 10));
 
             FireShot(new Position(x, y));
 
