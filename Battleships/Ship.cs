@@ -12,8 +12,10 @@ namespace Battleships
         public int Length { get; protected set; }
         public List<Position> SpacesOccupied { get; protected set; } = new List<Position>();
         public List<Position> DamagedSpaces { get; protected set; } = new List<Position>();
+        //Destroyed returns true if all the spaces are damaged
         public bool Destroyed { get { return (SpacesOccupied.Count == 0); } }
 
+        //moves position space from spaces pccupied to damaged spaces
         public void DestroyShipSpace(Position space)
         {
             DamagedSpaces.Add(space);
@@ -21,6 +23,7 @@ namespace Battleships
         }
     }
 
+    //ship subclasses
     class Destroyer : Ship
     {
         public Destroyer()

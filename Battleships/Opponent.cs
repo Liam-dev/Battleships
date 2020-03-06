@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Battleships
 {
+    //computer controlled opponent
     class Opponent : Player
     {
         Random rnd;
@@ -19,6 +20,7 @@ namespace Battleships
 
         public override void Turn()
         {
+            //two strategies - either take a random shot or shoot adjacent to a previous hit
             Position adjacentShot = AdjacentShot();
             Position randomShot = RandomShot();
 
