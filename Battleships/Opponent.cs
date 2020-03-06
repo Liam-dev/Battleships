@@ -34,6 +34,7 @@ namespace Battleships
             }
         }
 
+        //chooses a new random position to fire at where not fired before
         protected Position RandomShot()
         {
             Position position = Position.Nowhere;
@@ -51,6 +52,7 @@ namespace Battleships
             return position;
         }
 
+        //attempts to find a position adjacent to a hit to uncover the rest of the ship
         protected Position AdjacentShot()
         {
             List<Position> neighbours = new List<Position>();

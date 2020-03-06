@@ -16,7 +16,7 @@ namespace Battleships
             Init();
         }
 
-
+        //displayes boards, asks user for next firing position, then displayes updated boards
         public override void Turn()
         {
             Console.Clear();
@@ -36,6 +36,7 @@ namespace Battleships
 
         }
 
+        //prints out all the user's boards side by side
         public void PrintBoards()
         {
             Console.Clear();

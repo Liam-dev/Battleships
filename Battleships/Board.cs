@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Battleships
 {
+    //enumeration of status' of a square on the board
     enum SquareType
     {
         Ocean = '·',
@@ -25,7 +26,8 @@ namespace Battleships
     }
 
     abstract class Board
-    {    
+    {   
+        //dictionary to store all the colours for differnt status' - it's long but it makes it look cool :)
         static protected Dictionary<SquareType, ConsoleColor> SquareColours = new Dictionary<SquareType, ConsoleColor>()
         {
             {SquareType.Ocean, ConsoleColor.DarkGray },
@@ -44,6 +46,7 @@ namespace Battleships
             {SquareType.HitAircraftCarrier, ConsoleColor.DarkCyan }
         };
 
+        //array of damged ship types
         static protected SquareType[] damagedShipsTypes = new SquareType[]
         {
             SquareType.HitDestroyer,
@@ -53,15 +56,19 @@ namespace Battleships
             SquareType.HitAircraftCarrier
         };
 
+        //array that makes a 10x10 grid of SquareTypes
         protected SquareType[,] grid = new SquareType[10, 10];
 
+        //abstract method - each child of Board has its own Update method
         public abstract void Update();
 
+        //sets a certain position on the grid to a certain value
         protected void SetGridPosition(Position position, SquareType type)
         {
             grid[position.X, position.Y] = type;
         }
 
+        //fills the board with ocean (empty) squares
         protected void FillBoard(SquareType type)
         {
             for (int i = 0; i < 10; i++)
@@ -73,6 +80,7 @@ namespace Battleships
             }
         }
 
+        //prints the board at a certain position on the screen
         public void Print(Position position)
         {
             Console.CursorTop = position.Y;

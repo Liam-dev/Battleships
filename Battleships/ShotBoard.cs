@@ -18,6 +18,7 @@ namespace Battleships
 
         public override void Update()
         {
+            //for each received shot, allocates a hit or miss in the grid
             foreach ((Position position, bool hit) shot in shots)
             {
                 Position position = shot.position;

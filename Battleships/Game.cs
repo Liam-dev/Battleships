@@ -27,7 +27,7 @@ namespace Battleships
 
         public void Play()
         {
-
+            //plays game until all of a players ships destroyed
             while (players.FindAll(player => player.HasLost).Count == 0)
             {
                 foreach (Player player in players)
