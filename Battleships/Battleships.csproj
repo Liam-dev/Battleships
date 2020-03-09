@@ -37,7 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Liam\AppData\Local\Temp\vs6630.tmp\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\lb131119\AppData\Local\Temp\vsC19A.tmp\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +47,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Liam\AppData\Local\Temp\vs6630.tmp\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\lb131119\AppData\Local\Temp\vsC19A.tmp\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>ship.ico</ApplicationIcon>

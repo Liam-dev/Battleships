@@ -22,7 +22,6 @@ namespace Battleships
         {
             //two strategies - either take a random shot or shoot adjacent to a previous hit
             Position adjacentShot = AdjacentShot();
-            Position randomShot = RandomShot();
 
             if (!(adjacentShot.Equals(Position.Nowhere)) && rnd.Next(0, 3) == 0)
             {
@@ -30,7 +29,7 @@ namespace Battleships
             }
             else
             {
-                FireShot(randomShot);
+                FireShot(RandomShot());
             }
         }
 
