@@ -16,8 +16,6 @@ namespace Battleships
             this.rnd = rnd;
 
             this.players = players;
-            players[0].SetOpponent(players[1]);
-            players[1].SetOpponent(players[0]);
 
             foreach (Player player in players)
             {
@@ -30,9 +28,14 @@ namespace Battleships
             //plays game until all of a players ships destroyed
             while (players.FindAll(player => player.HasLost).Count == 0)
             {
-                foreach (Player player in players)
+                for (int i = 0; i < 2; i++)
                 {
-                    player.Turn();
+                    Player player = players[i];
+                    Player opponent = players[1 - i];
+
+                    Position shot = player.Turn();
+                    bool hit = opponent.ReceiveShot(shot);
+                    player.ReceiveHitConfirmation(shot, hit);
                 }
             }
         }
