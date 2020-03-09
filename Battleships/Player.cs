@@ -9,7 +9,7 @@ namespace Battleships
     abstract class Player
     {
         protected Ship[] ships;
-        protected Player opponent;
+
         //list of fired shots
         protected List<(Position position, bool hit)> shots = new List<(Position, bool)>();
         //list of received shots
@@ -46,18 +46,12 @@ namespace Battleships
         }
 
         //abstract method Turn - implemented by computer and user controlled subclasses
-        public abstract void Turn();
+        public abstract Position Turn();
 
-        public void SetOpponent(Player opponent)
+        //receives confirmation of hit
+        public void ReceiveHitConfirmation(Position location, bool hit)
         {
-            this.opponent = opponent;
-        }
-
-        //fires a shot, pinging the opponent for hit confirmation
-        public void FireShot(Position location)
-        {
-            bool shipHit = opponent.ReceiveShot(location);
-            shots.Add((location, shipHit));
+            shots.Add((location, hit));
         }
 
         //called when hit by opponent - returns hit confirmation

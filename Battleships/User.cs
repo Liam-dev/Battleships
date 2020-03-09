@@ -17,7 +17,7 @@ namespace Battleships
         }
 
         //displayes boards, asks user for next firing position, then displayes updated boards
-        public override void Turn()
+        public override Position Turn()
         {
             Console.Clear();
             Console.WriteLine("Turn: {0}", name);
@@ -55,10 +55,7 @@ namespace Battleships
 
             } while (!(x >= 0 && x <= 10));
 
-            FireShot(new Position(x, y));
-
-            PrintBoards();
-
+            return new Position(x, y);
         }
 
         //prints out all the user's boards side by side
@@ -71,7 +68,6 @@ namespace Battleships
                 board.Update();
                 board.Print(new Position(60 * i + 2, 2));
             }
-        }
+        }     
     }
-
 }
