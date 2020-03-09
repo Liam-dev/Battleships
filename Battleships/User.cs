@@ -68,7 +68,6 @@ namespace Battleships
                 board.Update();
                 board.Print(new Position(60 * i + 2, 2));
             }
-        }
+        }     
     }
-
 }

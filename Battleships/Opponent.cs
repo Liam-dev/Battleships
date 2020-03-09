@@ -23,7 +23,7 @@ namespace Battleships
             //two strategies - either take a random shot or shoot adjacent to a previous hit
             Position adjacentShot = AdjacentShot();
 
-            if (!(adjacentShot.Equals(Position.Nowhere)) && rnd.Next(0, 3) == 0)
+            if (!(adjacentShot.Equals(Position.Nowhere)) && rnd.Next(0, 2) == 0)
             {
                 return adjacentShot;
             }
