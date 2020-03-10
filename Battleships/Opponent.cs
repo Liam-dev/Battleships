@@ -14,8 +14,7 @@ namespace Battleships
         public Opponent(Random rnd)
         {
             this.rnd = rnd;
-            Init();
-            PlaceShips(rnd, true);            
+            Init();         
         }
 
         public override Position Turn()
