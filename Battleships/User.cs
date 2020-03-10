@@ -8,11 +8,9 @@ namespace Battleships
 {
     class User : Player
     {
-        protected string name;
-
         public User(string name)
         {
-            this.name = name;
+            Name = name;
             Init();
         }
 
@@ -20,7 +18,7 @@ namespace Battleships
         public override Position Turn()
         {
             Console.Clear();
-            Console.WriteLine("Turn: {0}", name);
+            Console.WriteLine("Turn: {0}", Name);
             PrintBoards();
             Console.CursorTop = 25;
             Console.CursorLeft = 0;
@@ -38,7 +36,7 @@ namespace Battleships
                     Console.WriteLine("Enter a number between 0 and 10");
                 }                
 
-            } while (!(x >= 0 && x <= 10));
+            } while (!(x >= 0 && x < 10));
 
             int y = -1;
             do
@@ -53,7 +51,7 @@ namespace Battleships
                     Console.WriteLine("Enter a number between 0 and 10");
                 }
 
-            } while (!(x >= 0 && x <= 10));
+            } while (!(x >= 0 && x < 10));
 
             return new Position(x, y);
         }

@@ -38,6 +38,9 @@ namespace Battleships
                     player.ReceiveHitConfirmation(shot, hit);
                 }
             }
+
+            Player winner = players.Find(player => !(player.HasLost));
+            Console.WriteLine("\nThe winner is {0}", winner.Name);
         }
     }
 }

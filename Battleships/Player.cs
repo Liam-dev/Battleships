@@ -8,6 +8,8 @@ namespace Battleships
 {
     abstract class Player
     {
+        public string Name;
+
         protected Ship[] ships;
 
         //list of fired shots

@@ -13,6 +13,7 @@ namespace Battleships
 
         public Opponent(Random rnd)
         {
+            Name = "Bot";
             this.rnd = rnd;
             Init();         
         }
