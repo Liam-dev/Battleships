@@ -9,7 +9,7 @@ namespace Battleships
     class Game
     {
         protected List<Player> players;
-        Random rnd;
+        protected Random rnd;
 
         public Game(List<Player> players, Random rnd)
         {
