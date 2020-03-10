@@ -17,7 +17,7 @@ namespace Battleships
             List<Player> players = new List<Player>()
             {
                 new User("Liam"),
-                new Opponent(rnd)
+                new User("Bob")
             };
 
             Game newGame = new Game(players, rnd);

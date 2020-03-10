@@ -18,7 +18,7 @@ namespace Battleships
         public override Position Turn()
         {
             Console.Clear();
-            Console.WriteLine("Turn: {0}", Name);
+            Console.Write("Turn: {0}", Name);
             PrintBoards();
             Console.CursorTop = 25;
             Console.CursorLeft = 0;
@@ -59,7 +59,6 @@ namespace Battleships
         //prints out all the user's boards side by side
         public void PrintBoards()
         {
-            Console.Clear();
             for (int i = 0; i < boards.Length; i++)
             {
                 Board board = boards[i];

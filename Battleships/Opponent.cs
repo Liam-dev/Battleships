@@ -13,7 +13,7 @@ namespace Battleships
 
         public Opponent(Random rnd)
         {
-            Name = "Bot";
+            Name = "Bot" + rnd.Next(0,1000000).ToString();
             this.rnd = rnd;
             Init();         
         }
