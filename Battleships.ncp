@@ -1,0 +1,258 @@
+<Project>
+  <Name>Battleships</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Position</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Structure">
+        <Name>Position</Name>
+        <Access>Public</Access>
+        <Location left="77" top="72" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Position()</Member>
+        <Member type="Method">public override string ToString()</Member>
+        <Member type="Property">public static int Nowhere { get; set; }</Member>
+        <Member type="Method">public Position Translate()</Member>
+        <Member type="Property">public int X { get; set; }</Member>
+        <Member type="Property">public int Y { get; set; }</Member>
+      </Entity>
+      <Entity type="Enum">
+        <Name>SquareType</Name>
+        <Access>Public</Access>
+        <Location left="291" top="72" />
+        <Size width="162" height="299" />
+        <Collapsed>False</Collapsed>
+        <Value>Ocean</Value>
+        <Value>Hit</Value>
+        <Value>OwnHit</Value>
+        <Value>Miss</Value>
+        <Value>Destroyer</Value>
+        <Value>Submarine</Value>
+        <Value>Cruiser</Value>
+        <Value>Battleship</Value>
+        <Value>AircraftCarrier</Value>
+        <Value>HitDestoyer</Value>
+        <Value>HitSubmarine</Value>
+        <Value>HitCruiser</Value>
+        <Value>HitBattleship</Value>
+        <Value>HitAircraftCarrier</Value>
+      </Entity>
+      <Entity type="Class">
+        <Name>Game</Name>
+        <Access>Public</Access>
+        <Location left="509" top="72" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected List&lt;Players&gt; players</Member>
+        <Member type="Field">private Random rnd</Member>
+        <Member type="Constructor">public Game()</Member>
+        <Member type="Method">public void Play()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Ships</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Ship</Name>
+        <Access>Public</Access>
+        <Location left="430" top="43" />
+        <Size width="254" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public int DamagedSpaces { get; set; }</Member>
+        <Member type="Property">public bool Destroyed { get; set; }</Member>
+        <Member type="Property">public int NewProperty { get; set; }</Member>
+        <Member type="Property">public List&lt;Position&gt; SpacesOccupied { get; set; }</Member>
+        <Member type="Property">public SquareType Type { get; set; }</Member>
+        <Member type="Method">public void DestroyShipSpace()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Destoyer</Name>
+        <Access>Public</Access>
+        <Location left="135" top="383" />
+        <Size width="162" height="103" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Destoyer()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Cruiser</Name>
+        <Access>Public</Access>
+        <Location left="322" top="383" />
+        <Size width="162" height="103" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Cruiser()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Submarine</Name>
+        <Access>Public</Access>
+        <Location left="511" top="383" />
+        <Size width="162" height="103" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Submarine()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Battleship</Name>
+        <Access>Public</Access>
+        <Location left="695" top="383" />
+        <Size width="162" height="103" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Battleship()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AircraftCarrier</Name>
+        <Access>Public</Access>
+        <Location left="872" top="383" />
+        <Size width="162" height="103" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public AircraftCarrier()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="5" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Boards</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Board</Name>
+        <Access>Public</Access>
+        <Location left="334" top="73" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected static SquareType[] damagedShipTypes</Member>
+        <Member type="Field">protected static Dicionary&lt;SquareType, ConsoleColor&gt; SquareColours</Member>
+        <Member type="Field">protected SquareType[,] grid</Member>
+        <Member type="Method">public void Print()</Member>
+        <Member type="Method">public abstract void Update()</Member>
+        <Member type="Method">protected void FillBoard()</Member>
+        <Member type="Method">protected void SetGridPosition()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>OwnBoard</Name>
+        <Access>Public</Access>
+        <Location left="207" top="358" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected List&lt;Position&gt; hitPositions</Member>
+        <Member type="Field">protected Ship[] ships</Member>
+        <Member type="Constructor">public OwnBoard()</Member>
+        <Member type="Method">public override void Update()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ShotBoard</Name>
+        <Access>Public</Access>
+        <Location left="453" top="358" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected List&lt;Position, bool&gt; shots</Member>
+        <Member type="Constructor">public ShotBoard()</Member>
+        <Member type="Method">public override void Update()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Player</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Player</Name>
+        <Access>Public</Access>
+        <Location left="400" top="43" />
+        <Size width="162" height="298" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">protected Board[] boards</Member>
+        <Member type="Field">protected ShotBoard firingBoard</Member>
+        <Member type="Field">protected OwnBoard ownBoard</Member>
+        <Member type="Field">protected List&lt;Position&gt; receivedHits</Member>
+        <Member type="Field">protected Ship[] ships</Member>
+        <Member type="Field">protected List&lt;Position, bool&gt; shots</Member>
+        <Member type="Method">public void Innit()</Member>
+        <Member type="Property">public string Name { get; set; }</Member>
+        <Member type="Property">public bool HasLost { get; set; }</Member>
+        <Member type="Method">public void PlaceShips()</Member>
+        <Member type="Method">public void ReceiveHitConfirmation()</Member>
+        <Member type="Method">public bool ReceiveShot()</Member>
+        <Member type="Method">public abstract Position Turn()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Opponent</Name>
+        <Access>Public</Access>
+        <Location left="229" top="423" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Random rnd</Member>
+        <Member type="Constructor">public Opponent()</Member>
+        <Member type="Method">protected Position AdjacentShot()</Member>
+        <Member type="Method">protected Position RandomShot()</Member>
+        <Member type="Method">public override Position Turn()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>User</Name>
+        <Access>Public</Access>
+        <Location left="564" top="423" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public User()</Member>
+        <Member type="Method">public void PrintBoards()</Member>
+        <Member type="Method">public override Position Turn()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
